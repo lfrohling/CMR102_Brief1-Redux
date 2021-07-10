@@ -123,35 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!21 &95864893
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 'Games_TestLogo_GoodMaterial
-
-    16574'
-  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 9f0d8f4d8527423a909eabf1a49bf35e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats: []
-    m_Colors:
-    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1 &276739328
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,7 +304,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 95864893}
+  - {fileID: 2011573549}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -544,6 +515,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soccerField: {fileID: 369023632}
   moveArea: {x: 6, y: 0, z: 13}
+  arCamera: {fileID: 0}
 --- !u!4 &774154478
 Transform:
   m_ObjectHideFlags: 0
@@ -571,6 +543,7 @@ GameObject:
   - component: {fileID: 971641848}
   - component: {fileID: 971641847}
   - component: {fileID: 971641846}
+  - component: {fileID: 971641851}
   m_Layer: 0
   m_Name: ARCamera
   m_TagString: MainCamera
@@ -663,12 +636,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 971641845}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.85, z: -7.830001}
+  m_LocalPosition: {x: -0, y: 0.85, z: -7.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &971641851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971641845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff6588feaf5305e4db43b7afdf551b01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
 --- !u!4 &1609713825 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8213404489732488900, guid: bd98ee20a13d2d74999ec85cabdcf61a, type: 3}
@@ -838,6 +824,35 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!21 &2011573549
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 'Games_TestLogo_GoodMaterial
+
+    16274'
+  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 9f0d8f4d8527423a909eabf1a49bf35e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors:
+    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1001 &975803729256407100
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -934,7 +949,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8213404489732488900, guid: bd98ee20a13d2d74999ec85cabdcf61a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.09
       objectReference: {fileID: 0}
     - target: {fileID: 8213404489732488900, guid: bd98ee20a13d2d74999ec85cabdcf61a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -942,7 +957,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8213404489732488900, guid: bd98ee20a13d2d74999ec85cabdcf61a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8213404489732488900, guid: bd98ee20a13d2d74999ec85cabdcf61a, type: 3}
       propertyPath: m_LocalRotation.w
