@@ -228,8 +228,16 @@ PrefabInstance:
       value: SoccerField
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a6731c74bceaf2f44bf858b1a4a81d9f, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a6731c74bceaf2f44bf858b1a4a81d9f, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: a6731c74bceaf2f44bf858b1a4a81d9f, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6731c74bceaf2f44bf858b1a4a81d9f, type: 3}
@@ -284,7 +292,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 637090575}
-  m_Mesh: {fileID: 1728682208}
+  m_Mesh: {fileID: 1303995354}
 --- !u!23 &637090577
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -304,7 +312,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2011573549}
+  - {fileID: 832668969}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -516,6 +524,8 @@ MonoBehaviour:
   soccerField: {fileID: 369023632}
   moveArea: {x: 6, y: 0, z: 13}
   arCamera: {fileID: 0}
+  soccerballPrefab: {fileID: 0}
+  aRContentParent: {fileID: 0}
 --- !u!4 &774154478
 Transform:
   m_ObjectHideFlags: 0
@@ -530,6 +540,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &832668969
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 'Games_TestLogo_GoodMaterial
+
+    16506'
+  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 9f0d8f4d8527423a909eabf1a49bf35e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors:
+    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1 &971641845
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,6 +583,7 @@ GameObject:
   - component: {fileID: 971641847}
   - component: {fileID: 971641846}
   - component: {fileID: 971641851}
+  - component: {fileID: 971641852}
   m_Layer: 0
   m_Name: ARCamera
   m_TagString: MainCamera
@@ -655,18 +695,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
---- !u!4 &1609713825 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8213404489732488900, guid: bd98ee20a13d2d74999ec85cabdcf61a, type: 3}
-  m_PrefabInstance: {fileID: 8213404488689006181}
+--- !u!114 &971641852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
---- !u!43 &1728682208
+  m_GameObject: {fileID: 971641845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ea5692249edf184b84eb4ffb607817d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layersToHit:
+    serializedVersion: 2
+    m_Bits: 256
+  gameManager: {fileID: 774154477}
+--- !u!43 &1303995354
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ImageTargetMesh16372
+  m_Name: ImageTargetMesh16496
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -678,7 +729,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.5, y: 0, z: 0.5}
+      m_Extent: {x: 0.5, y: 0, z: 0.6799335}
   m_Shapes:
     vertices: []
     shapes: []
@@ -812,7 +863,7 @@ Mesh:
     m_UVInfo: 0
   m_LocalAABB:
     m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0.5, y: 0, z: 0.5}
+    m_Extent: {x: 0.5, y: 0, z: 0.6799335}
   m_MeshUsageFlags: 0
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
@@ -824,35 +875,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!21 &2011573549
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+--- !u!4 &1609713825 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8213404489732488900, guid: bd98ee20a13d2d74999ec85cabdcf61a, type: 3}
+  m_PrefabInstance: {fileID: 8213404488689006181}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 'Games_TestLogo_GoodMaterial
-
-    16274'
-  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 9f0d8f4d8527423a909eabf1a49bf35e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats: []
-    m_Colors:
-    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1001 &975803729256407100
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -860,10 +887,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 276739329}
     m_Modifications:
-    - target: {fileID: -3284520080830077349, guid: 109da75b71d8d9343a8b39acc32a4dce, type: 3}
-      propertyPath: rigidBody
-      value: 
-      objectReference: {fileID: 975803729256407101}
     - target: {fileID: -3284520080830077349, guid: 109da75b71d8d9343a8b39acc32a4dce, type: 3}
       propertyPath: gameManager
       value: 
@@ -918,11 +941,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 109da75b71d8d9343a8b39acc32a4dce, type: 3}
---- !u!54 &975803729256407101 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 1904222377018734775, guid: 109da75b71d8d9343a8b39acc32a4dce, type: 3}
-  m_PrefabInstance: {fileID: 975803729256407100}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1722601001486735497 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1904222377018734773, guid: 109da75b71d8d9343a8b39acc32a4dce, type: 3}
@@ -935,10 +953,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 276739329}
     m_Modifications:
-    - target: {fileID: 3806792476136119872, guid: bd98ee20a13d2d74999ec85cabdcf61a, type: 3}
-      propertyPath: rigidBody
-      value: 
-      objectReference: {fileID: 8213404488689006182}
     - target: {fileID: 3806792476136119872, guid: bd98ee20a13d2d74999ec85cabdcf61a, type: 3}
       propertyPath: gameManager
       value: 
@@ -993,8 +1007,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd98ee20a13d2d74999ec85cabdcf61a, type: 3}
---- !u!54 &8213404488689006182 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 8213404489732488902, guid: bd98ee20a13d2d74999ec85cabdcf61a, type: 3}
-  m_PrefabInstance: {fileID: 8213404488689006181}
-  m_PrefabAsset: {fileID: 0}
